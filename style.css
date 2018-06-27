@@ -18,3 +18,7 @@ div#memory_board > div{
 	cursor:pointer;
 	text-align:center;
 }
+.complete{
+	color: red;
+	background-color: yellow;
+}
