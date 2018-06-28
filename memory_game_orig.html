@@ -6,14 +6,18 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div id="memory_board"></div>
-<div style="position: absolute; top: 30%; float:left; border: 2px solid red; height:140px; width: 150px; " >
-	<p id="tries">No. of tries: </p>
-	
-	<p>Time taken: <label id="countdown"></label></p>
-	<p id="complete"></p>
-	<button id="submit" value="RESTART" onclick="reload();">RESTART</button>
-</div>
+	<div class="main-container">
+		<div class="header-container">
+			<p id="tries">No. of moves: </p>
+			
+			<p>Time taken: <label id="countdown"></label></p>
+			<p id="complete"></p>
+			<button id="submit" value="RESTART" onclick="reload();">RESTART</button>
+		</div>
+		<div id="memory_board">
+			
+		</div>
+	</div>
 <script src="app.js"></script>
 <script src="timer.js"></script>
 <script>newBoard();timer();</script>

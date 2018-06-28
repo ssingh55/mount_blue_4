@@ -26,7 +26,7 @@ console.log(board);
 board.addEventListener('click', function(e) {
     if (e.target.className == 'tile_count') {
         count++;
-         document.getElementById('tries').innerHTML = "No. of tries: "+ count;
+         document.getElementById('tries').innerHTML = "No. of moves: "+ count;
     }
 });
 
@@ -38,7 +38,7 @@ function newBoard() {
         output += '<div class="tile_count" id="tile_' + i + '" onclick="memoryFlipTile(this,\'' + memory_array[i] + '\')"></div>';
     }
     document.getElementById('memory_board').innerHTML = output;
-    document.getElementById("tries").innerHTML = "No. of tries: "+ 0;
+    document.getElementById("tries").innerHTML = "No. of moves: "+ 0;
   //  timer();
 }
 

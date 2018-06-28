@@ -1,5 +1,5 @@
 div#memory_board{
-	background:#CCC;
+	background:linear-gradient(#11998e, #38ef7d);
 	border:#999 1px solid;
 	width:600px;
 	height:540px;
@@ -7,7 +7,8 @@ div#memory_board{
 	margin:0px auto;
 }
 div#memory_board > div{
-	background: url(small-rocket-ship-silhouette.png) no-repeat;
+	/*background: url(small-rocket-ship-silhouette.png) no-repeat;*/
+	background: linear-gradient(#4e54c8,#8f94fb);
 	border:#000 1px solid;
 	width:71px;
 	height:71px;
@@ -17,8 +18,25 @@ div#memory_board > div{
 	font-size:64px;
 	cursor:pointer;
 	text-align:center;
+	border-radius: 10px;
 }
 .complete{
 	color: red;
 	background-color: yellow;
+}
+.main-container{
+	display: flex;
+	flex-direction: column;
+	width: 75%;
+	max-width: 900px;
+	margin: 0 auto;
+}
+.header-container{
+	display: flex;
+	justify-content: space-between;
+}
+
+#memory_board{
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
 }
