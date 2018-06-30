@@ -1,3 +1,4 @@
+var x=1;
 function timer(){
 var input = {
     year: 0,
@@ -13,7 +14,7 @@ input.hours, input.minutes, input.seconds);
 
 var interval = 1;
 
-setInterval(function () {
+x=setInterval(function () {
     timestamp = new Date(timestamp.getTime() + interval * 1000);
     // document.getElementById('countdown').innerHTML = timestamp.getDay() + 'd:' + timestamp.getHours() + 'h:' + timestamp.getMinutes() + 'm:' + timestamp.getSeconds() + 's';
     document.getElementById('countdown').innerHTML = timestamp.getHours() + 'h:' + timestamp.getMinutes() + 'm:' + timestamp.getSeconds() + 's';

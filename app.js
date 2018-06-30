@@ -39,6 +39,7 @@ function newBoard() {
     }
     document.getElementById('memory_board').innerHTML = output;
     document.getElementById("tries").innerHTML = "No. of moves: "+ 0;
+    
   //  timer();
 }
 
@@ -62,7 +63,8 @@ function memoryFlipTile(tile, val) {
                     // alert("Board cleared... generating new board");
                     document.getElementById('complete').innerHTML = "Completed";
                     document.getElementById('memory_board').innerHTML = "";
-                    newBoard();
+                    clearInterval(x);
+                    // newBoard();
                 }
             } else {
                 function flip2Back() {
