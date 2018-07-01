@@ -1,38 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Confirm Dialog Box</title>
-    <style>
-        
-    </style>
-</head>
-<body>
-<!-- dialog box -->
-<div id="white-background">
-</div>
-<div id="dlgbox">
-    <div id="dlg-header">Please Confirm</div>
-    <div id="dlg-body">Do you want to continue?</div>
-    <div id="dlg-footer">
-        <button onclick="dlgOK()">OK</button>
-        <button onclick="dlgCancel()">Cancel</button>
-    </div>
-</div>
-
-<!-- rest of the page -->
-<h1>Dialog Box Demo</h1>
-
-<button onclick="showDialog()">Click Me!</button>
-
-<!-- script of dialog -->
-<script>
-    function dlgCancel(){
+//dialog box
+function dlgCancel(){
         dlgHide();
         document.getElementsByTagName("H1")[0].innerHTML = "You clicked Cancel.";
     }
     function dlgOK(){
         dlgHide();
-        document.getElementsByTagName("H1")[0].innerHTML = "You clicked OK.";
+        // document.getElementsByTagName("H1")[0].innerHTML = "You clicked OK.";
+        reload();
     }
     function dlgHide(){
         var whitebg = document.getElementById("white-background");
@@ -49,6 +23,3 @@
         dlg.style.left = (winWidth/2) - 480/2 + "px";
         dlg.style.top = "150px";
     }
-</script>
-</body>
-</html

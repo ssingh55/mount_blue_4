@@ -1,4 +1,10 @@
 // require timer.js
+// close icon in modal
+ let closeicon = document.querySelector(".close");
+
+ // declare modal
+ let modal = document.getElementById("popup1")
+
 var memory_array = ['A','B','B','A'];
 //,'C','D','E','F','G','H','A','B','C','D','E','F','G','H'];
 var memory_values = [];
@@ -66,7 +72,8 @@ function memoryFlipTile(tile, val) {
                     document.getElementById('submit').innerHTML = "Start Again";
                     document.getElementById("submit").setAttribute('onclick', 'reload();');
                     clearInterval(x);
-                    // alert(document.getElementById('countdown').textContent+" "+(count+1));
+                    document.getElementsByClassName("main-container").style.display = none;
+                    document.getElementById("finalMove").innerHTML=(count+1);// document.getElementById('countdown').textContent;
                     // document.getElementById('memory_board').innerHTML = "";//to make it null after game completion
                     // newBoard();//to display new board automatically
                 }
@@ -89,28 +96,42 @@ function memoryFlipTile(tile, val) {
     }
 }
 
-//dialog box
-function dlgCancel(){
-        dlgHide();
-        document.getElementsByTagName("H1")[0].innerHTML = "You clicked Cancel.";
-    }
-    function dlgOK(){
-        dlgHide();
-        // document.getElementsByTagName("H1")[0].innerHTML = "You clicked OK.";
-        reload();
-    }
-    function dlgHide(){
-        var whitebg = document.getElementById("white-background");
-        var dlg = document.getElementById("dlgbox");
-        whitebg.style.display = "none";
-        dlg.style.display = "none";
-    }
-    function showDialog(){
-        var whitebg = document.getElementById("white-background");
-        var dlg = document.getElementById("dlgbox");
-        whitebg.style.display = "block";
-        dlg.style.display = "block";
-        var winWidth = window.innerWidth;
-        dlg.style.left = (winWidth/2) - 480/2 + "px";
-        dlg.style.top = "150px";
-    }
+
+
+//congratulations part
+function congratulations(){
+    if (matchedCard.length == 16){
+        clearInterval(interval);
+        finalTime = timer.innerHTML;
+
+        // show congratulations modal
+        modal.classList.add("show");
+
+        // declare star rating variable
+        var starRating = document.querySelector(".stars").innerHTML;
+
+        //showing move, rating, time on modal
+        document.getElementById("finalMove").innerHTML = count;
+        document.getElementById("starRating").innerHTML = starRating;
+        document.getElementById("totalTime").innerHTML = finalTime;
+
+        //closeicon on modal
+        closeModal();
+    };
+}
+
+
+// @description close icon on modal
+function closeModal(){
+    closeicon.addEventListener("click", function(e){
+        modal.classList.remove("show");
+        startGame();
+    });
+}
+
+
+// @desciption for user to play Again 
+function playAgain(){
+    modal.classList.remove("show");
+    startGame();
+}
