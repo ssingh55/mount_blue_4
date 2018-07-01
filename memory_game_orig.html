@@ -11,8 +11,18 @@
 			<p id="tries">No. of moves: </p>
 			
 			<p>Time taken: <label id="countdown"></label></p>
+			<div id="white-background">
+			</div>
+			<div id="dlgbox">
+			    <div id="dlg-header">Please Confirm</div>
+			    <div id="dlg-body">Do you want to restart?</div>
+			    <div id="dlg-footer">
+			        <button onclick="dlgOK()">OK</button>
+			        <button onclick="dlgCancel()">Cancel</button>
+			    </div>
+			</div>
 			<p id="complete"></p>
-			<button id="submit" value="RESTART" onclick="reload();">RESTART</button>
+			<button id="submit" value="RESTART">RESTART</button>
 		</div>
 		<div id="memory_board">
 			

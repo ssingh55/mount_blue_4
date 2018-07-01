@@ -1,5 +1,6 @@
 // require timer.js
-var memory_array = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F', 'G', 'G', 'H', 'H'];
+var memory_array = ['A','B','B','A'];
+//,'C','D','E','F','G','H','A','B','C','D','E','F','G','H'];
 var memory_values = [];
 var memory_tile_ids = [];
 var tiles_flipped = 0;
@@ -39,7 +40,7 @@ function newBoard() {
     }
     document.getElementById('memory_board').innerHTML = output;
     document.getElementById("tries").innerHTML = "No. of moves: "+ 0;
-    
+    document.getElementById("submit").setAttribute('onclick', 'showDialog();');
   //  timer();
 }
 
@@ -62,9 +63,12 @@ function memoryFlipTile(tile, val) {
                 if (tiles_flipped == memory_array.length) {
                     // alert("Board cleared... generating new board");
                     document.getElementById('complete').innerHTML = "Completed";
-                    document.getElementById('memory_board').innerHTML = "";
+                    document.getElementById('submit').innerHTML = "Start Again";
+                    document.getElementById("submit").setAttribute('onclick', 'reload();');
                     clearInterval(x);
-                    // newBoard();
+                    // alert(document.getElementById('countdown').textContent+" "+(count+1));
+                    // document.getElementById('memory_board').innerHTML = "";//to make it null after game completion
+                    // newBoard();//to display new board automatically
                 }
             } else {
                 function flip2Back() {
@@ -84,3 +88,29 @@ function memoryFlipTile(tile, val) {
         }
     }
 }
+
+//dialog box
+function dlgCancel(){
+        dlgHide();
+        document.getElementsByTagName("H1")[0].innerHTML = "You clicked Cancel.";
+    }
+    function dlgOK(){
+        dlgHide();
+        // document.getElementsByTagName("H1")[0].innerHTML = "You clicked OK.";
+        reload();
+    }
+    function dlgHide(){
+        var whitebg = document.getElementById("white-background");
+        var dlg = document.getElementById("dlgbox");
+        whitebg.style.display = "none";
+        dlg.style.display = "none";
+    }
+    function showDialog(){
+        var whitebg = document.getElementById("white-background");
+        var dlg = document.getElementById("dlgbox");
+        whitebg.style.display = "block";
+        dlg.style.display = "block";
+        var winWidth = window.innerWidth;
+        dlg.style.left = (winWidth/2) - 480/2 + "px";
+        dlg.style.top = "150px";
+    }
