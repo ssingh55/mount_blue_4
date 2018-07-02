@@ -1,7 +1,7 @@
 //dialog box
 function dlgCancel(){
         dlgHide();
-        document.getElementsByTagName("H1")[0].innerHTML = "You clicked Cancel.";
+        // document.getElementsByTagName("H1")[0].innerHTML = "You clicked Cancel.";
     }
     function dlgOK(){
         dlgHide();

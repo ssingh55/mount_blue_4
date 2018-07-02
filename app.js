@@ -5,8 +5,7 @@
  // declare modal
  let modal = document.getElementById("popup1")
 
-var memory_array = ['A','B','B','A'];
-//,'C','D','E','F','G','H','A','B','C','D','E','F','G','H'];
+var memory_array = ['A','B','B','A','C','D','E','F','G','H','C','D','E','F','G','H'];
 var memory_values = [];
 var memory_tile_ids = [];
 var tiles_flipped = 0;
@@ -72,8 +71,9 @@ function memoryFlipTile(tile, val) {
                     document.getElementById('submit').innerHTML = "Start Again";
                     document.getElementById("submit").setAttribute('onclick', 'reload();');
                     clearInterval(x);
-                    document.getElementsByClassName("main-container").style.display = none;
-                    document.getElementById("finalMove").innerHTML=(count+1);// document.getElementById('countdown').textContent;
+                    showDialog1();
+                    // document.getElementsByClassName("main-container").style.display = none;
+                    // document.getElementById("finalMove").innerHTML=(count+1);// document.getElementById('countdown').textContent;
                     // document.getElementById('memory_board').innerHTML = "";//to make it null after game completion
                     // newBoard();//to display new board automatically
                 }
@@ -94,44 +94,4 @@ function memoryFlipTile(tile, val) {
             }
         }
     }
-}
-
-
-
-//congratulations part
-function congratulations(){
-    if (matchedCard.length == 16){
-        clearInterval(interval);
-        finalTime = timer.innerHTML;
-
-        // show congratulations modal
-        modal.classList.add("show");
-
-        // declare star rating variable
-        var starRating = document.querySelector(".stars").innerHTML;
-
-        //showing move, rating, time on modal
-        document.getElementById("finalMove").innerHTML = count;
-        document.getElementById("starRating").innerHTML = starRating;
-        document.getElementById("totalTime").innerHTML = finalTime;
-
-        //closeicon on modal
-        closeModal();
-    };
-}
-
-
-// @description close icon on modal
-function closeModal(){
-    closeicon.addEventListener("click", function(e){
-        modal.classList.remove("show");
-        startGame();
-    });
-}
-
-
-// @desciption for user to play Again 
-function playAgain(){
-    modal.classList.remove("show");
-    startGame();
 }
