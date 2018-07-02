@@ -5,7 +5,7 @@
  // declare modal
  let modal = document.getElementById("popup1")
 
-var memory_array = ['A','B','B','A'];//,'C','D','E','F','G','H','C','D','E','F','G','H'];
+var memory_array = ['A','B','B','A','C','D','E','F','G','H','C','D','E','F','G','H'];
 var memory_values = [];
 var memory_tile_ids = [];
 var tiles_flipped = 0;
