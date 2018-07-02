@@ -5,7 +5,7 @@
  // declare modal
  let modal = document.getElementById("popup1")
 
-var memory_array = ['A','B','B','A','C','D','E','F','G','H','C','D','E','F','G','H'];
+var memory_array = ['A','B','B','A'];//,'C','D','E','F','G','H','C','D','E','F','G','H'];
 var memory_values = [];
 var memory_tile_ids = [];
 var tiles_flipped = 0;
@@ -71,9 +71,9 @@ function memoryFlipTile(tile, val) {
                     document.getElementById('submit').innerHTML = "Start Again";
                     document.getElementById("submit").setAttribute('onclick', 'reload();');
                     clearInterval(x);
+                    document.getElementById('finalMove').innerHTML=count;
+                    document.getElementById('totalTime').innerHTML=document.getElementById('countdown').textContent;
                     showDialog1();
-                    // document.getElementsByClassName("main-container").style.display = none;
-                    // document.getElementById("finalMove").innerHTML=(count+1);// document.getElementById('countdown').textContent;
                     // document.getElementById('memory_board').innerHTML = "";//to make it null after game completion
                     // newBoard();//to display new board automatically
                 }
